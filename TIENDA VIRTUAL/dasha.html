@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Gelato Fest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a; /* Fondo ultra oscuro moderno */
+        }
+        /* Estructura del Sidebar Lateral */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #1e293b;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        /* Contenedor del contenido principal */
+        .main-content {
+            margin-left: 260px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        .nav-link-dash {
+            color: #94a3b8;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+        .nav-link-dash:hover, .nav-link-dash.active {
+            background-color: #334155;
+            color: #f8fafc;
+        }
+        .dash-card {
+            background-color: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+        }
+        /* Ajustes responsivos para celulares */
+        @media (max-width: 992px) {
+            .sidebar {
+                left: -260px; /* Esconde el menú en celulares */
+            }
+            .sidebar.show {
+                left: 0;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar p-3 d-flex flex-column" id="sidebarMenu">
+        <div class="d-flex align-items-center gap-2 px-2 mb-4">
+            <i class="bi bi-ice-cream text-danger fs-3"></i>
+            <span class="fs-5 fw-bold text-light">Gelato Panel</span>
+        </div>
+        
+        <nav class="d-flex flex-column gap-1 flex-grow-1">
+            <a href="#" class="nav-link-dash active"><i class="bi bi-grid-1x2-fill"></i> Panel Principal</a>
+            <a href="#" class="nav-link-dash"><i class="bi bi-cart-fill"></i> Órdenes</a>
+            <a href="#" class="nav-link-dash"><i class="bi bi-graph-up"></i> Ventas</a>
+            <a href="#" class="nav-link-dash"><i class="bi bi-people-fill"></i> Clientes</a>
+            <a href="#" class="nav-link-dash"><i class="bi bi-gear-fill"></i> Ajustes</a>
+        </nav>
+
+        <div class="border-top pt-3">
+            <div class="d-flex align-items-center gap-3 px-2">
+                <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; font-weight: 600;">
+                    Mm
+                </div>
+                <div>
+                    <h6 class="mb-0 small fw-bold text-light">Mabel Miliano</h6>
+                    <small class="text-muted" style="font-size: 0.75rem;">Administrador</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        
+        <header class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-outline-light d-lg-none" id="toggleSidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h1 class="h4 fw-bold mb-0 text-light">Panel Principal</h1>
+            </div>
+            <span class="badge bg-secondary-subtle text-secondary px-3 py-2 rounded-pill small">
+                <i class="bi bi-calendar3 me-1"></i> Mayo 2026
+            </span>
+        </header>
+
+        <section class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-3 mb-4">
+            <div class="col">
+                <div class="card dash-card p-3 shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="text-muted small fw-medium">Ingresos Totales</span>
+                        <div class="badge bg-success-subtle text-success rounded p-2"><i class="bi bi-currency-dollar fs-5"></i></div>
+                    </div>
+                    <h2 class="h3 fw-bold mb-1 text-light">$1,245.50</h2>
+                    <span class="text-success small fw-medium"><i class="bi bi-arrow-up-short"></i> +12.5% este mes</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card dash-card p-3 shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="text-muted small fw-medium">Helados Vendidos</span>
+                        <div class="badge bg-primary-subtle text-primary rounded p-2"><i class="bi bi-box-seam fs-5"></i></div>
+                    </div>
+                    <h2 class="h3 fw-bold mb-1 text-light">348 uds</h2>
+                    <span class="text-success small fw-medium"><i class="bi bi-arrow-up-short"></i> +8.2% vs ayer</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card dash-card p-3 shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="text-muted small fw-medium">Nuevos Clientes</span>
+                        <div class="badge bg-warning-subtle text-warning rounded p-2"><i class="bi bi-people fs-5"></i></div>
+                    </div>
+                    <h2 class="h3 fw-bold mb-1 text-light">+52</h2>
+                    <span class="text-danger small fw-medium"><i class="bi bi-arrow-down-short"></i> -2.1% esta semana</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card dash-card p-3 shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <span class="text-muted small fw-medium">Cupones QR Canjeados</span>
+                        <div class="badge bg-info-subtle text-info rounded p-2"><i class="bi bi-qr-code-scan fs-5"></i></div>
+                    </div>
+                    <h2 class="h3 fw-bold mb-1 text-light">18</h2>
+                    <span class="text-muted small">De la landing page</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card dash-card p-4 shadow-sm">
+            <h3 class="h6 fw-bold mb-3 text-light">Últimos Pedidos</h3>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead>
+                        <tr class="text-muted small" style="border-bottom-color: rgba(255, 255, 255, 0.1);">
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody style="border: none;">
+                        <tr>
+                            <td class="fw-medium text-light">Carlos Gómez</td>
+                            <td>Chocolate Belga (x2)</td>
+                            <td class="text-muted small">Hoy, 12:34 PM</td>
+                            <td class="fw-bold text-light">$8.00</td>
+                            <td><span class="badge bg-success-subtle text-success px-2.5 py-1.5 rounded-pill">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-medium text-light">María Delgado</td>
+                            <td>Fresa Suprema (x1)</td>
+                            <td class="text-muted small">Hoy, 11:15 AM</td>
+                            <td class="fw-bold text-light">$3.50</td>
+                            <td><span class="badge bg-warning-subtle text-warning px-2.5 py-1.5 rounded-pill">Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-medium text-light">Andrés Pérez</td>
+                            <td>Pistacho Real (x3)</td>
+                            <td class="text-muted small">Ayer, 6:45 PM</td>
+                            <td class="fw-bold text-light">$13.50</td>
+                            <td><span class="badge bg-success-subtle text-success px-2.5 py-1.5 rounded-pill">Completado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Lógica simple para abrir/cerrar el menú lateral en celulares
+        const toggleButton = document.getElementById('toggleSidebar');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+
+        if (toggleButton && sidebarMenu) {
+            toggleButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                sidebarMenu.classList.toggle('show');
+            });
+
+            // Cerrar el menú si se hace clic fuera de él
+            document.addEventListener('click', (e) => {
+                if (!sidebarMenu.contains(e.target) && sidebarMenu.classList.contains('show')) {
+                    sidebarMenu.classList.remove('show');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

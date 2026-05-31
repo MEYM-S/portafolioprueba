@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Consigue tu Helado Gratis! | Gelato Fest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffaf0;
+        }
+        .bg-gradient-gelato {
+            background: linear-gradient(135deg, #fbc531, #ff6b81);
+            color: white;
+        }
+        .cta-card {
+            border: none;
+            border-radius: 24px;
+            background: white;
+        }
+        .btn-landing {
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-landing:hover {
+            background-color: #ee5253;
+            color: white;
+            transform: scale(1.02);
+        }
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #ffeaa7;
+            color: #d35400;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="py-3 bg-white shadow-sm mb-5">
+        <div class="container text-center">
+            <span class="fs-4 fw-bold text-danger"><i class="bi bi-ice-cream me-2"></i>Gelato Fest</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row align-items-center g-5">
+            
+            <div class="col-lg-6">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3 text-uppercase">🔥 Oferta de Inauguración</span>
+                <h1 class="display-4 fw-bold lh-sm mb-3 text-dark">¡Te regalamos tu primer <span style="color: #ff6b81;">Gelato Artesanal</span>!</h1>
+                <p class="lead text-muted mb-4">Regístrate hoy mismo en nuestro club de antojos y recibe un cupón QR exclusivo en tu correo para canjearlo por un helado gratis en cualquiera de nuestras sucursales.</p>
+                
+                <div class="d-flex align-items-start mb-3">
+                    <div class="feature-icon me-3"><i class="bi bi-heart-fill fs-5"></i></div>
+                    <div>
+                        <h5 class="fw-bold mb-0">100% Natural</h5>
+                        <p class="text-muted small">Sin conservantes, hechos con fruta fresca del día.</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start">
+                    <div class="feature-icon me-3"><i class="bi bi-star-fill fs-5"></i></div>
+                    <div>
+                        <h5 class="fw-bold mb-0">Sabores Exclusivos</h5>
+                        <p class="text-muted small">Prueba combinaciones únicas que no encontrarás en otro lado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1">
+                <div class="card cta-card shadow-lg p-4 p-md-5">
+                    <h3 class="fw-bold mb-2 text-center text-dark">¡Asegura tu helado!</h3>
+                    <p class="text-muted small text-center mb-4">Completa tus datos. Solo toma 10 segundos.</p>
+                    
+                    <div id="landingAlert" class="alert alert-success d-none mb-3" role="alert">
+                        <i class="bi bi-check-circle-fill me-2"></i> ¡Cupón enviado! Revisa tu bandeja de entrada. 🍦
+                    </div>
+
+                    <form id="landingForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label fw-medium small">Nombre completo</label>
+                            <input type="text" class="form-control py-2 rounded-3" id="username" required placeholder="Tu nombre">
+                        </div>
+                        <div class="mb-4">
+                            <label for="useremail" class="form-label fw-medium small">Correo electrónico</label>
+                            <input type="email" class="form-control py-2 rounded-3" id="useremail" required placeholder="tu@correo.com">
+                        </div>
+                        <button type="submit" class="btn btn-landing w-100 py-2.5 shadow-sm">
+                            ¡Quiero mi Helado Gratis! 🚀
+                        </button>
+                    </form>
+                    <p class="text

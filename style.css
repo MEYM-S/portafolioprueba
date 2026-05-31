@@ -1,0 +1,129 @@
+/* --- Variables globales y personalización --- */
+:root {
+    /* Gradiente principal para botones y acentos (Más vivo y moderno) */
+    --primary-gradient: linear-gradient(135deg, #2ee750, #06b6d4); /* Violeta a Cian */
+    --bg-gradient-light: linear-gradient(180deg, #ffffff 0%, #f4f3ff 100%); /* Blanco con toque sutil violeta */
+    
+    /* EL CAMBIO: Modo oscuro vibrante (Azul medianoche + destellos púrpuras) */
+    --bg-gradient-dark: linear-gradient(135deg, #19150b 0%, #272511 50%, #453c11 100%); 
+    
+    --purple-subtle: #f3e8ff;
+    --text-purple: #d8de35;
+}
+
+/* Modificaciones específicas según el tema activo */
+[data-bs-theme="light"] {
+    --body-bg-custom: var(--bg-gradient-light);
+    --card-hover-bg: #ffffff;
+    --card-shadow: 0 10px 30px rgba(99, 102, 241, 0.05);
+}
+
+[data-bs-theme="dark"] {
+    --body-bg-custom: var(--bg-gradient-dark);
+    --card-hover-bg: #283d1f; /* Tarjetas gris-azuladas para que contrasten */
+    --purple-subtle: #5f6510;
+    --text-purple: #e9d5ff;
+    
+    /* Sobreescribimos las variables nativas de Bootstrap para dar más color */
+    --bs-body-color: #f3f4f6;
+    --bs-card-bg: rgba(23, 23, 37, 0.6); /* Tarjetas semi-transparentes */
+    --bs-border-color: rgba(124, 58, 237, 0.2); /* Bordes púrpuras neón muy sutiles */
+    --card-shadow: 0 10px 40px rgba(245, 239, 255, 0.15); /* Brillo neón en tarjetas */
+}
+
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--body-bg-custom) !important; /* Forzamos el uso de nuestros gradientes */
+    background-attachment: fixed; /* Mantiene el gradiente estático al hacer scroll */
+    transition: background 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+/* --- Efecto Elevado y Brillo en Tarjetas --- */
+.card {
+    border-radius: 24px !important;
+    border: 1px solid var(--bs-border-color) !important;
+    backdrop-filter: blur(8px); /* Efecto cristal para el modo oscuro */
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
+}
+
+.skill-card:hover, .project-card:hover, .profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow) !important;
+    background-color: var(--card-hover-bg) !important;
+}
+
+/* Ajuste extra para que los textos mutados (grises) no se pierdan en el fondo oscuro */
+[data-bs-theme="dark"] .text-muted {
+    color: #9ca3af !important;
+}
+
+[data-bs-theme="dark"] .bg-section-alt {
+    background-color: rgba(124, 58, 237, 0.04); /* Fondo alterno con tinte morado */
+}
+/* Refuerzo para que las pastillas se muestren de lado a lado */
+.d-flex.flex-wrap {
+    display: flex !important;
+    flex-direction: row !important; /* Fuerza la alineación horizontal */
+    flex-wrap: wrap !important;     /* Permite saltar de línea solo si se acaba el espacio */
+}
+
+.badge {
+    white-space: nowrap !important; /* Evita que el texto de una pastilla se parta en dos líneas */
+}
+/* 🎛️ CONTENEDOR GRID: Controla cuántos iconos entran por fila automáticamente */
+.tech-grid {
+    display: grid;
+    /* Ajusta el tamaño de las celdas automáticamente (mínimo 65px) */
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)); 
+    gap: 12px;                  /* Espaciado perfecto entre los iconos */
+    width: 100%;
+    max-width: 320px;           /* Evita que se estiren demasiado en PC y los agrupa al centro */
+    justify-content: center;
+}
+
+/* 🧱 CAJITAS DE ICONOS CUADRADAS (Estilo Adobe/Figma de tu imagen) */
+.tech-box {
+    width: 65px;
+    height: 65px;
+    background-color: #111827 !important; /* Fondo oscuro liso para resaltar el logo */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;        /* Esquinas suavizadas idénticas a tu ejemplo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+/* Efecto sutil al pasar el mouse por encima */
+.tech-box:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+}
+
+/* Ajuste rápido para el modo claro (si cambia de tema, el fondo se adapta) */
+[data-bs-theme="light"] .tech-box {
+    background-color: #f3f4f6 !important;
+    border-color: rgba(0, 0, 0, 0.05);
+}
+/* ==========================================================================
+   🎯 FIJAR TAMAÑO DE LAS TARJETAS "SOBRE MÍ" (Evita que se estiren)
+   ========================================================================== */
+#sobre-mi .bg-body.border.rounded-4 {
+    max-width: 280px;         /* 🛑 Bloquea el ancho máximo para que no se expandan hacia los lados */
+    min-height: 160px;        /* 🛑 Bloquea la altura mínima para que no queden como tubos largos hacia abajo */
+    margin: 0 auto;           /* Las mantiene perfectamente centradas en su columna */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centra el contenido internamente para que se vea ordenado */
+    padding: 20px !important; /* Relleno interno compacto y fijo */
+}
+
+/* Ajuste para que la fila de estas tarjetas no intente estirarlas a la fuerza */
+#sobre-mi .row.g-3 {
+    justify-content: center;  /* Centra las tarjetas horizontalmente en la pantalla */
+    align-items: center;      /* Alinea las tarjetas para que midan exactamente lo mismo */
+}

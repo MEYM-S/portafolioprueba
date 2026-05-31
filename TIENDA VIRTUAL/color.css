@@ -1,0 +1,57 @@
+/* Estilos para el botón de tema */
+        #themeToggle {
+            background-color: #c1c422 !important;
+            border: none !important;
+            transition: transform 0.2s ease;
+        }
+        #themeToggle:hover {
+            transform: scale(1.1);
+        }
+        /* Transición suave para todo el fondo de la página */
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      
+        .project-card {
+            background-color: var(--bs-card-bg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+            border: 1px solid rgba(247, 240, 100, 0.05);
+        }
+
+        .project-img {
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        [data-bs-theme="dark"] .project-card:hover {
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.15) !important;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        /* Animación suave al filtrar proyectos */
+        .fade-item {
+            transition: all 0.4s ease;
+        }
+
+        /* Estilos personalizados para las etiquetas de tecnología */
+        .tech-badge {
+            font-size: 0.75rem;
+            background-color: rgba(124, 58, 237, 0.08) !important;
+            color: #3f4008 !important;
+            border: 1px solid rgba(124, 58, 237, 0.2) !important;
+        }
+
+        [data-bs-theme="dark"] .tech-badge {
+            background-color: rgba(139, 92, 246, 0.15) !important;
+            color: #fa8bd7 !important;
+            border: 1px solid rgba(246, 92, 215, 0.3) !important;
+        }

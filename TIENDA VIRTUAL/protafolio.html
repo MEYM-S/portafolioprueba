@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Proyectos | Mabel Miliano</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="color.css"
+
+</head>
+<body>
+    <button id="themeToggle" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 shadow-lg d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; z-index: 2000;">
+        <i id="themeIcon" class="bi bi-moon-fill fs-5"></i>
+    </button>
+
+    <!-- 1. Barra de Navegación Minimalista -->
+    <nav class="navbar navbar-expand-lg bg-body border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="file:///C:/Users/Administrator/Desktop/proyeccto%20ia/PROYECTO.HTML">
+        
+                <i class="bi bi-arrow-left me-2"></i>Volver al Portafolio
+            </a>
+        </div>
+    </nav>
+  <div>
+    <script src=""https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                                    <script src="docume.js"></script>
+  </div>
+    <!-- 2. Cabecera de la Página -->
+    <header class="py-5 text-center bg-body-tertiary">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-2">Galería de Proyectos</h1>
+            <p class="text-muted lead mx-auto" style="max-width: 600px;">Una colección detallada de las aplicaciones y soluciones web que he diseñado y programado.</p>
+        </div>
+    </header>
+
+    <!-- 3. Filtros de Categoría Interactivos -->
+    <section class="container my-4 text-center">
+        <div class="btn-group rounded-pill shadow-sm bg-body p-1 border" role="group" aria-label="Filtros de proyectos">
+            <button type="button" class="btn btn-sm btn-primary rounded-pill px-4 filter-btn active" data-filter="all">Todos</button>
+            <button type="button" class="btn btn-sm text-muted rounded-pill px-4 filter-btn" data-filter="frontend">Frontend</button>
+            <button type="button" class="btn btn-sm text-muted rounded-pill px-4 filter-btn" data-filter="sistemas">Sistemas</button>
+        </div>
+    </section>
+
+    <!-- 4. Rejilla de Proyectos Destacados -->
+    <main class="container mb-5 pb-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="projectsContainer">
+            
+            <!-- Proyecto 1: Tienda Online -->
+            <div class="col fade-item" data-category="frontend">
+                <div class="card project-card h-100 rounded-4 overflow-hidden shadow-sm">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&auto=format&fit=crop&q=80" alt="Tienda Online Helados" class="card-img-top project-img">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <span class="text-uppercase text-primary fw-bold mb-1" style="font-size: 0.75rem; tracking-wider: 1px;">E-Commerce</span>
+                        <h3 class="h5 fw-bold mb-2 text-body">Gelato Fest | Tienda Online</h3>
+                        <p class="card-text text-muted small flex-grow-1">Tienda interactiva de helados con un sistema dinámico de carrito de compras implementado con JavaScript nativo. Calcula totales, subtotales y gestiona cantidades en tiempo real.</p>
+                        
+                        <div class="d-flex gap-2 mb-4 flex-wrap">
+                            <span class="badge tech-badge px-2.5 py-1.5 rounded-pill">JavaScript</span>
+                            <span class="badge tech-badge px-2.5 py-1.5 rounded-pill">Bootstrap 5</span>
+                            <span class="badge tech-badge px-2.5 py-1.5 rounded-pill">UI Design</span>
+                        </div>
+                        
+                        <a href="file:///C:/Users/Administrator/Desktop/proyeccto%20ia/index.html" target="_blank" class="btn btn-primary w-100 rounded-pill fw-medium py-2 shadow-sm mt-auto">
+                            Ver Proyecto Real <i class="bi bi-box-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 2: Landing Page -->
+            <div class="col fade-item" data-category="frontend">
+                <div class="card project-card h-100 rounded-4 overflow-hidden shadow-sm">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop&q=80" alt="Landing Page de Conversión" class="card-img-top project-img">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <span class="text-uppercase text-primary fw-bold mb-1" style="font-size: 0.75rem; tracking-wider: 1px;">Marketing Web</span>
+                        <h3 class="h5 fw-bold mb-2 text-body">Landing Page de Captación</h3>
+                        <p class="card-text text-muted small flex-grow-1">Página de aterrizaje optimizada con técnicas de conversión estrictas: sin enlaces distractores, llamadas a la acción (CTA) contrastantes y formulario optimizado con alertas.</p>
+                        
+                        <div class="d-flex gap-2 mb-4 flex-wrap">
+                            <span class="badge tech-badge px-2.5 py-1.5 rounded-pill">HTML5</span>
+                            <span class="badge tech-badge px-2.5 py-1.5 rounded-pill">CSS3</span>
+                            <span class="badge tech-badge px-2.5 py-1.5 rounded-pill">Conversion</span>
+                        </div>
+                        
+                        <a href="file:///C:/Users/Administrator/Desktop/proyeccto%20ia/TIENDA%20VIRTUAL/LANDIN.HTML" target="_blank" class="btn btn-primary w-100 rounded-pill fw-medium py-2 shadow-sm mt-auto">
+                            Ver Proyecto Real <i class="bi bi-box-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 3: Dashboard -->
+            <div class="col fade-item" data-category="sistemas">
+                <div class="card project-card h-100 rounded-4 overflow-hidden shadow-sm">
+                    <div class="overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&auto=format&fit=crop&q=80" alt="Dashboard Administrativo" class="card-img-top project-img">
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column">
+                        <span class="text-uppercase text-primary fw-bold mb-1" style="font-size: 0.75rem; tracking-wider: 1px;">Administración</span>
+                        <h3 class="h5 fw-bold mb-2 text-body">Panel Control Administrativo</h3>
+                        <p class="card-text text-muted small flex-grow-1">Dashboard avanzado con un diseño de rejilla (Bento Grid) en modo oscuro nativo. Presenta tarjetas de analíticas (KPIs) de ventas e ingresos y tablas responsivas con datos estructurados.</p>
+                        
+                        <div class="d-flex gap-2 mb-4 flex-wrap">
+                            <span class="badge tech-badge px-2.5 py-1.5 rounded-pill">Dark Mode</span>
+                            <span class="badge tech-badge px-2.5 py-1.5 rounded-pill">Bento Grid</span>
+                            <span class="badge tech-badge px-2.5 py-1.5 rounded-pill">Data Layout</span>
+                        </div>
+                        
+                        <a href="file:///C:/Users/Administrator/Desktop/proyeccto%20ia/TIENDA%20VIRTUAL/DASHA.HTML" target="_blank" class="btn btn-primary w-100 rounded-pill fw-medium py-2 shadow-sm mt-auto">
+                            Ver Proyecto Real <i class="bi bi-box-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Lógica Interactiva para Filtrar Tarjetas -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const projectItems = document.querySelectorAll(".fade-item");
+
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    // Cambiar estados de clases activas en botones
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove("btn-primary", "active");
+                        btn.classList.add("text-muted");
+                    });
+                    this.classList.add("btn-primary", "active");
+                    this.classList.remove("text-muted");
+
+                    const targetFilter = this.getAttribute("data-filter");
+
+                    // Mostrar u ocultar tarjetas con animación
+                    projectItems.forEach(item => {
+                        const itemCategory = item.getAttribute("data-category");
+
+                        if (targetFilter === "all" || itemCategory === targetFilter) {
+                            item.style.display = "block";
+                            setTimeout(() => {
+                                item.style.opacity = "1";
+                                item.style.transform = "scale(1)";
+                            }, 50);
+                        } else {
+                            item.style.opacity = "0";
+                            item.style.transform = "scale(0.9)";
+                            setTimeout(() => {
+                                item.style.display = "none";
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
